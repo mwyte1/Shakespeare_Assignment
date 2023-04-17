@@ -91,13 +91,16 @@ with tab1:
 with tab2:
     if image != " ":
        freqdist = nltk.FreqDist(filtered_text)
-       freqdist = pd.DataFrame.from_dict(freqdist, orient='index')
-       freqdist.columns = ['Frequency']
-       freqdist.index.name = 'Word'
-       fig, ax = plt.subplots()
-       sns.barplot(x=freqdist.Frequency, y=freqdist.index, data=freqdist, orient='h', ax=ax)
-       ax.set_xlim(min_count_of_words, max_word)
-       st.pyplot(fig)
+       freqdist = pd.DataFrame(list(freqdist.items()), columns=['Word', 'Count'])
+       freqdist = freqdist[freqdist['Count']>=min_count_of_words]
+       bar = alt.Chart(freqdist).mark_bar().encode(
+           x=alt.X('Count', axis=alt.Axis(title="count")),
+           y=alt.Y('Word', axis=alt.Axis(title="word"))    
+       ).properties(
+           width=image_width,
+           height=400
+       )
+       st.altair_chart(bar, use_container_width=True)
     else:
         st.write(" ")
 
