@@ -40,7 +40,7 @@ if image != " ":
     #open(file, "r") asks Python to open the file for reading
     #open().read() asks Python to actually read the file
     #.lower() justs asks that Python return all of the items in lowercase form
-    raw_text = open(file=image,mode="r").read().lower()
+    raw_text = open(image,"r").read().lower()
     #list of english stopwords; nltk_stop_words is the list of stop words
     nltk_stop_words = stopwords.words('english')
 
