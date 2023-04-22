@@ -70,6 +70,8 @@ tab1, tab2, tab3 = st.tabs(['Word Cloud', 'Bar Chart', 'View Text'])
 
 with tab1:
     if image != " ":
+        import tkinter as tk
+        import matplotlib
         matplotlib.use('TKAgg')
         def create_wordcloud(raw_text):
             matplotlib.use('TKAgg')
