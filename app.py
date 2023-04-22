@@ -2,9 +2,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import altair as alt
-import tkinter as tk
-import matplotlib
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 import glob, nltk, os, re
@@ -71,9 +68,7 @@ tab1, tab2, tab3 = st.tabs(['Word Cloud', 'Bar Chart', 'View Text'])
 
 with tab1:
     if image != " ":
-        matplotlib.use('TKAgg')
         def create_wordcloud(raw_text):
-            matplotlib.use('TKAgg')
             wordcloud = WordCloud(max_words=max_word,
                                   max_font_size=size_of_largest_word, 
                                   width=image_width,
