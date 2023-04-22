@@ -4,6 +4,7 @@ import streamlit as st
 import altair as alt
 import matplotlib.pyplot as plt
 import matplotlib
+matplotlib.use('TKAgg')
 from wordcloud import WordCloud, STOPWORDS
 import glob, nltk, os, re
 import tkinter as tk
