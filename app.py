@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import altair as alt
-import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('TKAgg')
+import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 import glob, nltk, os, re
 import tkinter as tk
