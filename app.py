@@ -4,7 +4,7 @@ import streamlit as st
 import altair as alt
 import tkinter as tk
 import matplotlib
-matplotlib.use('Agg')
+export MPLBACKEND=TKAgg
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 import glob, nltk, os, re
