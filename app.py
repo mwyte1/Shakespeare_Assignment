@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 from wordcloud import WordCloud, STOPWORDS
 import glob, nltk, os, re
-import tk
 from nltk.corpus import stopwords 
 from nltk import FreqDist
 nltk.download('stopwords')
